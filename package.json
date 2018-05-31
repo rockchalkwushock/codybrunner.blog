@@ -1,0 +1,54 @@
+{
+  "name": "codybrunner.blog",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author":
+    "Cody Brunner <rockchalkwushock@icloud.com> (https://codybrunner.me)",
+  "description": "My personal & tech blog built with GatsbyJS.",
+  "repository": "https://github.com/rockchalkwushock/codybrunner.blog.git",
+  "scripts": {
+    "build": "gatsby build",
+    "cm": "git cz",
+    "develop": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.247",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-react-helmet": "^2.0.10",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-equimper": "^2.2.2",
+    "eslint-config-prettier": "^2.9.0",
+    "husky": "^1.0.0-rc.8",
+    "lint-staged": "^7.1.2",
+    "prettier": "^1.12.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": ["equimper", "prettier"]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --single-quote --no-semi --write",
+      "git add"
+    ]
+  }
+}
