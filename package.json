@@ -2,8 +2,7 @@
   "name": "codybrunner.blog",
   "version": "0.1.0",
   "license": "MIT",
-  "author":
-    "Cody Brunner <rockchalkwushock@icloud.com> (https://codybrunner.me)",
+  "author": "Cody Brunner <rockchalkwushock@icloud.com> (https://codybrunner.me)",
   "description": "My personal & tech blog built with GatsbyJS.",
   "repository": "https://github.com/rockchalkwushock/codybrunner.blog.git",
   "scripts": {
@@ -15,6 +14,8 @@
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-source-filesystem": "^1.5.38",
+    "gatsby-transformer-remark": "^1.7.41",
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
@@ -37,7 +38,10 @@
       "browser": true,
       "node": true
     },
-    "extends": ["equimper", "prettier"]
+    "extends": [
+      "equimper",
+      "prettier"
+    ]
   },
   "husky": {
     "hooks": {
