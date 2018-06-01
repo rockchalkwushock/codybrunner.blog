@@ -385,7 +385,35 @@ This line is also begins a separate paragraph, but...\
 This line is only separated by a single newline, so it's a separate line in the _same
 paragraph_.
 
-[^1]: The footnote appears at the bottom of the page
+```javascript
+function sum(a, b) {
+  return a + b
+}
+```
+
+```json
+{
+  "hello": {
+    "world": 123,
+    "cody": 456
+  }
+}
+```
+
+<iframe
+    allow="encrypted-media"
+    allowfullscreen
+    frameborder="0"
+    gesture="media"
+    height="315"
+    itemprop="contentUrl"
+    src="https://www.youtube.com/embed/L59eDcrAk8Q"
+    type="text/html"
+    width="420"
+  >
+</iframe>
+
+[^1]: The footnote appears at the bottom of the page :poop:
 
 [1]: https://www.gatsbyjs.org/packages/gatsby-transformer-remark/
 [2]: http://remark.js.org/

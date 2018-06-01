@@ -82,7 +82,26 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: []
+        plugins: [
+          'gatsby-remark-autolink-headers',
+          'gatsby-remark-emoji',
+          'gatsby-remark-external-links',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              linkImagesToOriginal: true,
+              maxWidth: 736,
+              sizeByPixelDensity: false
+            }
+          },
+          'gatsby-remark-prismjs',
+          {
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: {
+              wrapperStyle: 'margin: 0.5em 0'
+            }
+          }
+        ]
       }
     }
   ]

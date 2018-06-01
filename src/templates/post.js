@@ -2,7 +2,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-// import '../css/blog-post.css'; // make it pretty!
+import { Post } from '../components'
 
 export default function Template({
   data // this prop will be injected by the GraphQL query we'll write in a bit
@@ -11,19 +11,7 @@ export default function Template({
   return (
     <div className="blog-post-container">
       <Helmet title={`codybrunner.blog - ${post.frontmatter.title}`} />
-      <div className="blog-post">
-        <h1>{post.frontmatter.title}</h1>
-        <h2>{post.frontmatter.date}</h2>
-        <h2>{post.frontmatter.description}</h2>
-        <h2>{post.frontmatter.tags}</h2>
-        <h2>
-          {post.timeToRead} • {post.wordCount.words}
-        </h2>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </div>
+      <Post post={post} />
     </div>
   )
 }

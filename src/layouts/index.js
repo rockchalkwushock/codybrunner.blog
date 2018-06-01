@@ -1,6 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+// PrismJS theme for markdown files
+import 'prismjs/themes/prism.css'
+
 import { Footer, Header, Wrapper } from '../components'
 import './index.css'
 
