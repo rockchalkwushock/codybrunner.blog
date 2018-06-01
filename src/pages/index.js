@@ -1,5 +1,7 @@
+/* eslint-disable no-undef */
 import React from 'react'
-import Link from 'gatsby-link'
+
+import { Card } from '../components'
 
 // ! Refactor with template & pass most recent 'posts' on as pathContext.
 
@@ -7,12 +9,14 @@ const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <div>
-      <h1> Hi people </h1> <p> Welcome to your new Gatsby site. </p>
-      <p> Now go build something great. </p>
       {posts.map(({ node: post }) => (
-        <Link key={post.fields.slug} to={post.fields.slug}>
-          {post.frontmatter.title}
-        </Link>
+        <Card
+          key={post.fields.slug}
+          link={post.fields.slug}
+          time={post.timeToRead}
+          words={post.wordCount.words}
+          {...post.frontmatter}
+        />
       ))}
     </div>
   )
@@ -32,6 +36,10 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             title
+          }
+          timeToRead
+          wordCount {
+            words
           }
         }
       }

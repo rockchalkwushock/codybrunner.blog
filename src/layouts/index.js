@@ -1,35 +1,25 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
+import { Footer, Header, Wrapper } from '../components'
 import './index.css'
 
-const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
+const Layout = ({ children, data }) => {
+  const { buildTime, siteMetadata: site } = data.site
+  return (
+    <div>
+      <Helmet title={site.title} />
+      <Header siteTitle={site.title} />
+      <Wrapper>{children()}</Wrapper>
+      <Footer
+        buildTime={buildTime}
+        copyright={site.copyright}
+        icons={site.icons}
+        links={site.links}
+        siteUrl={site.siteUrl}
+      />
     </div>
-  </div>
-)
-
-Layout.propTypes = {
-  children: PropTypes.func,
+  )
 }
 
 export default Layout
@@ -37,7 +27,36 @@ export default Layout
 export const query = graphql`
   query SiteTitleQuery {
     site {
+      buildTime(formatString: "DD MMM YYYY")
       siteMetadata {
+        copyright
+        icons {
+          className
+          href
+          label
+        }
+        links {
+          creativeCommons {
+            href
+            text
+          }
+          gatsby {
+            href
+            text
+          }
+          now {
+            href
+            text
+          }
+          src {
+            href
+          }
+          styled {
+            href
+            text
+          }
+        }
+        siteUrl
         title
       }
     }
