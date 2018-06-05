@@ -9,7 +9,7 @@ export default function Template({
 }) {
   const { markdownRemark: post } = data // data.markdownRemark holds our post data
   return (
-    <div className="blog-post-container">
+    <div>
       <Helmet title={`codybrunner.blog - ${post.frontmatter.title}`} />
       <Post post={post} />
     </div>
@@ -32,9 +32,6 @@ export const pageQuery = graphql`
       }
       html
       timeToRead
-      wordCount {
-        words
-      }
     }
   }
 `

@@ -7,7 +7,7 @@ tags: ["numero uno"]
 title: "My First Blog Post"
 ---
 
-![](joshua-earle-234740.jpg) _Photo by
+![](temp.jpg) _Photo by
 [Joshua Earle](https://unsplash.com/@joshuaearle) via
 [Unsplash](https://unsplash.com/@joshuaearle?photo=-87JyMb9ZfU)_
 

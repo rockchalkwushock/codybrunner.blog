@@ -6,15 +6,20 @@ const UnstyledLink = props => <Link {...props} />
 
 const ExternalLink = styled.a`
   background-image: none;
+  color: white;
   padding: 0 0.25em;
+  text-shadow: unset;
 
   :hover {
+    color: lightblue;
     text-decoration: underline;
   }
 `
 
 const InternalLink = styled(UnstyledLink)`
   background-image: none;
+  color: white;
+  text-shadow: unset;
 
   :hover {
     text-decoration: underline;

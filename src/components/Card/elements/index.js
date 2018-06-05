@@ -10,6 +10,8 @@ const CardContainer = Container.extend`
 `
 
 const StyledDescription = styled.p`
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: lighter;
   margin-bottom: 0;
 `

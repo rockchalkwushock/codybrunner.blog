@@ -14,7 +14,6 @@ const IndexPage = ({ data }) => {
           key={post.fields.slug}
           link={post.fields.slug}
           time={post.timeToRead}
-          words={post.wordCount.words}
           {...post.frontmatter}
         />
       ))}
@@ -38,9 +37,6 @@ export const pageQuery = graphql`
             title
           }
           timeToRead
-          wordCount {
-            words
-          }
         }
       }
     }

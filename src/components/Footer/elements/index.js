@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
-  margin: 2em 0;
+  background-color: slategrey;
+  margin-top: 2em;
+  padding: 1em 0em;
 `
 
 export { StyledFooter }

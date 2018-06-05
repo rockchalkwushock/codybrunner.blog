@@ -8,14 +8,14 @@ import {
   StyledDescription
 } from './elements'
 
-const Card = ({ date, description, link, time, title, words }) => (
+const Card = ({ date, description, link, time, title }) => (
   <CardContainer align="unset" justify="unset" pad="1rem 0.75rem">
     <div>
       <StyledTitle>
         <Link href={link} label={title} text={title} />
       </StyledTitle>
       <StyledInfo>
-        {date} • {time} minutes • {words} words
+        {date} • {time} minutes
       </StyledInfo>
     </div>
     <div>
