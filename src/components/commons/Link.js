@@ -18,7 +18,6 @@ const ExternalLink = styled.a`
 
 const InternalLink = styled(UnstyledLink)`
   background-image: none;
-  color: white;
   text-shadow: unset;
 
   :hover {

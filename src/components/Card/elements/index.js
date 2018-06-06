@@ -5,7 +5,7 @@ import { Container } from '../../commons'
 const CardContainer = Container.extend`
   border-radius: 5px;
   box-shadow: 3px 3px 20px 2px rgba(0, 0, 0, 0.5);
-  margin: 0 auto;
+  margin: 1.75em auto;
   max-width: 600px;
 `
 
