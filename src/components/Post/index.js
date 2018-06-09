@@ -1,16 +1,15 @@
 import React from 'react'
 
 import { Container } from '../commons'
-import { Content } from './elements'
+import { Content, Heading } from './elements'
 
 const Post = ({ post }) => (
   <Container align="unset" justify="unset">
-    <Container pad="0">
-      <h1>{post.frontmatter.title}</h1>
-      <h4>
-        {post.frontmatter.date} • {post.timeToRead} minutes
-      </h4>
-    </Container>
+    <Heading
+      date={post.frontmatter.date}
+      time={post.timeToRead}
+      title={post.frontmatter.title}
+    />
     <Content dangerouslySetInnerHTML={{ __html: post.html }} />
   </Container>
 )

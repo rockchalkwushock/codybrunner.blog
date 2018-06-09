@@ -80,7 +80,7 @@ jobs:
           paths: node_modules
       - persist_to_workspace:
           root: .
-paths: .
+          paths: .
 ```
 
 We will also want to specify the working directory for the environment. By default the file structure on CircleCi will look like this now:
@@ -105,8 +105,8 @@ When _persisting_ data we will add at the end of the job:
 
 ```yaml
 - persist_to_workspace:
-	root: .
-	paths: .
+	  root: .
+	  paths: .
 ```
 
 Now when we move on to a job that _attaches_ the workspace we will have `~/circleci-deployment/node_modules`. If you are wondering why `node_modules` is inside of `circleci-deployment/` remember at the beginning of each job we state the `working_directory` and that `.` denotes the current directory we are located.
@@ -170,7 +170,7 @@ test_and_report:
           path: coverage
           prefix: coverage
       - store_test_results:
-path: ./coverage/clover.xml
+          path: ./coverage/clover.xml
 ```
 
 ## Building
@@ -198,7 +198,7 @@ build:
             fi
       - persist_to_workspace:
           root: .
-paths: .
+          paths: .
 ```
 
 I ran into a bit of a problem when deploying initially and it dealt with the `PUBLIC_URL` environment variable from `create-react-app`. When running locally this will be set to the path on your local machine (i.e. `/chucknorris/my-project/build`). When running on CI this will end up being the path for the container. It presents a pretty sweet CORS related problem because our deployment instance from Zeit is `https://someUrl-hash.now.sh` and our assets even though deployed and in the cloud do not correlate with this url.

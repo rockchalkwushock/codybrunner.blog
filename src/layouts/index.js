@@ -1,27 +1,30 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { ThemeProvider } from 'styled-components'
 
 // PrismJS theme for markdown files
 import 'prismjs/themes/prism.css'
 
 import { Footer, Header, Wrapper } from '../components'
-import './index.css'
+import { theme } from '../utils/theme'
 
 const Layout = ({ children, data }) => {
   const { buildTime, siteMetadata: site } = data.site
   return (
-    <div>
-      <Helmet title={site.title} />
-      <Header siteTitle={site.title} />
-      <Wrapper>{children()}</Wrapper>
-      <Footer
-        buildTime={buildTime}
-        copyright={site.copyright}
-        icons={site.icons}
-        links={site.links}
-        siteUrl={site.siteUrl}
-      />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Helmet title={site.title} />
+        <Header siteTitle={site.title} />
+        <Wrapper>{children()}</Wrapper>
+        <Footer
+          buildTime={buildTime}
+          copyright={site.copyright}
+          icons={site.icons}
+          links={site.links}
+          siteUrl={site.siteUrl}
+        />
+      </div>
+    </ThemeProvider>
   )
 }
 

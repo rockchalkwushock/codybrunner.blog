@@ -5,23 +5,24 @@ import Link from 'gatsby-link'
 const UnstyledLink = props => <Link {...props} />
 
 const ExternalLink = styled.a`
-  background-image: none;
-  color: white;
-  padding: 0 0.25em;
-  text-shadow: unset;
+  background-image: ${({ theme }) => theme.reset};
+  color: ${({ theme }) => theme.primary};
+  padding: 0 0.25rem;
+  text-shadow: ${({ theme }) => theme.reset};
 
   :hover {
-    color: lightblue;
-    text-decoration: underline;
+    color: ${({ theme }) => theme.hover};
+    text-decoration: ${({ theme }) => theme.tDecoration};
   }
 `
 
 const InternalLink = styled(UnstyledLink)`
-  background-image: none;
-  text-shadow: unset;
+  background-image: ${({ theme }) => theme.reset};
+  color: ${({ theme }) => theme.secondary};
+  text-shadow: ${({ theme }) => theme.reset};
 
   :hover {
-    text-decoration: underline;
+    text-decoration: ${({ theme }) => theme.tDecoration};
   }
 `
 

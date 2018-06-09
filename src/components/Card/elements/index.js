@@ -3,26 +3,28 @@ import styled from 'styled-components'
 import { Container } from '../../commons'
 
 const CardContainer = Container.extend`
-  border-radius: 5px;
-  box-shadow: 3px 3px 20px 2px rgba(0, 0, 0, 0.5);
-  margin: 1.75em auto;
-  max-width: 600px;
+  border-radius: ${({ theme }) => theme.radius};
+  box-shadow: ${({ theme }) => theme.shadow};
+  margin: ${({ theme }) => theme.card.margin};
+  max-width: ${({ theme }) => theme.card.width};
 `
 
 const StyledDescription = styled.p`
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: lighter;
+  font-weight: ${({ theme }) => theme.card.weight};
   margin-bottom: 0;
 `
 
 const StyledInfo = styled.h5`
-  font-weight: lighter;
-  margin-bottom: 1rem;
+  font-weight: ${({ theme }) => theme.card.weight};
+  margin-bottom: ${({ theme }) => theme.card.mBottom};
+  margin-top: ${({ theme }) => theme.card.mTop};
 `
 
 const StyledTitle = styled.h2`
-  margin-bottom: 0.5rem;
+  margin-bottom: ${({ theme }) => theme.card.mBottom};
+  margin-top: ${({ theme }) => theme.card.mTop};
 `
 
 export { CardContainer, StyledDescription, StyledInfo, StyledTitle }
