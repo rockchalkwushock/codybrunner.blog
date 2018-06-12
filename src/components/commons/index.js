@@ -1,6 +1,6 @@
 import Container from './Container'
 import Icon from './Icon'
-import Link from './Link'
+import Link, { PaginationLink } from './Link'
 import Wrapper from './Wrapper'
 
-export { Container, Icon, Link, Wrapper }
+export { Container, Icon, Link, PaginationLink, Wrapper }

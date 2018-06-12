@@ -37,4 +37,5 @@ const SiteLink = ({ children, ext, href, label, text }) =>
     </InternalLink>
   )
 
+export { InternalLink }
 export default SiteLink
