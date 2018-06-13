@@ -1,11 +1,11 @@
+/* eslint-disable no-undef */
 import React from 'react'
-import Helmet from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
 
 // PrismJS theme for markdown files
 import 'prismjs/themes/prism.css'
 
-import { Footer, Header, Wrapper } from '../components'
+import { Footer, Header, Seo, Wrapper } from '../components'
 import { theme } from '../utils/theme'
 
 const Layout = ({ children, data }) => {
@@ -13,7 +13,7 @@ const Layout = ({ children, data }) => {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Helmet title={site.title} />
+        <Seo site={site} />
         <Header siteTitle={site.title} />
         <Wrapper>{children()}</Wrapper>
         <Footer
@@ -35,12 +35,16 @@ export const query = graphql`
     site {
       buildTime(formatString: "DD MMM YYYY")
       siteMetadata {
+        author
         copyright
+        description
         icons {
           className
           href
           label
         }
+        keywords
+        lang
         links {
           creativeCommons {
             href
@@ -64,6 +68,7 @@ export const query = graphql`
         }
         siteUrl
         title
+        twitter
       }
     }
   }

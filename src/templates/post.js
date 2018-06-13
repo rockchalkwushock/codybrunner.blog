@@ -1,14 +1,13 @@
 /* eslint-disable no-undef, react/no-danger */
 import React from 'react'
-import Helmet from 'react-helmet'
 
-import { Post } from '../components'
+import { Post, Seo } from '../components'
 
 export default function Template({ data }) {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post, site } = data
   return (
     <div>
-      <Helmet title={`codybrunner.blog - ${post.frontmatter.title}`} />
+      <Seo postSeo post={post} site={site.siteMetadata} />
       <Post post={post} />
     </div>
   )
@@ -30,6 +29,18 @@ export const pageQuery = graphql`
       }
       html
       timeToRead
+    }
+    site {
+      siteMetadata {
+        author
+        copyright
+        description
+        keywords
+        lang
+        siteUrl
+        title
+        twitter
+      }
     }
   }
 `

@@ -5,6 +5,7 @@ const styledVersion = dependencies['styled-components'].substr(1, 3)
 const year = new Date().getFullYear()
 
 module.exports = {
+  // pathPrefix: '/',
   siteMetadata: {
     author: 'Cody Brunner',
     copyright: `© 2017-${year} Cody Brunner`,
@@ -60,8 +61,9 @@ module.exports = {
         text: `Styled with Styled-Components ${styledVersion}`
       }
     },
-    siteUrl: 'TODO',
-    title: 'codybrunner.blog'
+    siteUrl: 'https://codybrunner.blog',
+    title: 'codybrunner.blog',
+    twitter: '@RockChalkDev'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
