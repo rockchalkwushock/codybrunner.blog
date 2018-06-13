@@ -5,9 +5,4 @@ const StyledHeader = styled.header`
   margin-bottom: 1.45rem;
 `
 
-const StyledTitle = styled.h1`
-  color: ${({ theme }) => theme.primary};
-  margin: 0;
-`
-
-export { StyledHeader, StyledTitle }
+export { StyledHeader }

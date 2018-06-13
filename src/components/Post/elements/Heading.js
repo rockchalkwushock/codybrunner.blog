@@ -1,13 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Container, Link } from '../../commons'
-
-const StyledTitle = styled.h1`
-  margin-bottom: 0.5rem;
-  margin-top: ${({ theme }) => theme.reset};
-  text-align: center;
-`
+import { Container, Link, Title } from '../../commons'
 
 const StyledInfo = styled.h4`
   margin-bottom: 0.5rem;
@@ -24,7 +18,7 @@ const StyledTags = styled.ul`
 
 const Heading = ({ date, tags, time, title }) => (
   <Container pad="0">
-    <StyledTitle>{title}</StyledTitle>
+    <Title>{title}</Title>
     <StyledInfo>
       {date} • {time} minutes
     </StyledInfo>

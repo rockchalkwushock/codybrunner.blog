@@ -1,13 +1,14 @@
 import React from 'react'
 
+import { Title } from '../commons'
 import Card from '../Card'
 
 const Term = ({ tag, taggedPosts }) => (
   <div>
-    <h1>
+    <Title>
       {taggedPosts.length} post{taggedPosts.length === 1 ? '' : 's'} tagged with{' '}
       {tag}
-    </h1>
+    </Title>
     {taggedPosts.map(post => (
       <Card
         key={post.fields.slug}

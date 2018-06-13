@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { Container } from '../commons'
-import { StyledHeader, StyledTitle } from './elements'
+import { Container, Title } from '../commons'
+import { StyledHeader } from './elements'
 
 const Header = ({ siteTitle }) => (
   <StyledHeader>
     <Container pad="1.45rem 1.0875rem">
-      <StyledTitle>{siteTitle}</StyledTitle>
+      <Title head>{siteTitle}</Title>
     </Container>
   </StyledHeader>
 )
