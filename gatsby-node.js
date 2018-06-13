@@ -45,6 +45,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
         const PAGE_LIMIT = 5
         const posts = result.data.allMarkdownRemark.edges
+        const postsByTags = {}
 
         // Create blog page(s) with pagination.
         createPaginationPages({
@@ -64,6 +65,30 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             path: `${edge.node.fields.slug}`,
             context: {
               slug: edge.node.fields.slug
+            }
+          })
+        })
+
+        // Associate posts via tags.
+        posts.forEach(({ node }) => {
+          if (node.frontmatter.tags) {
+            node.frontmatter.tags.forEach(tag => {
+              if (!postsByTags[tag]) {
+                postsByTags[tag] = []
+              }
+              postsByTags[tag].push(node)
+            })
+          }
+        })
+
+        Object.keys(postsByTags).forEach(term => {
+          // Create term pages with corresponding pages.
+          createPage({
+            path: `/tags/${term}`,
+            component: resolve(`src/templates/term.js`),
+            context: {
+              taggedPosts: postsByTags[term],
+              tag: term
             }
           })
         })

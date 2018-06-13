@@ -2,9 +2,8 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0px;
+  max-width: 46rem;
+  padding: 1.45rem 1.0875rem;
 `
 
 export default Wrapper

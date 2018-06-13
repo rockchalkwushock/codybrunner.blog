@@ -24,7 +24,7 @@ const Content = styled.section`
   h4,
   h5,
   h6 {
-    margin-bottom: 0.5em;
+    margin: 0.5em 0;
   }
   p {
     margin: 1em 0;

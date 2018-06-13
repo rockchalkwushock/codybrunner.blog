@@ -5,7 +5,7 @@ import { PaginationLink, StyledPages } from './elements'
 
 const Pagination = ({ next, page, pages, prev }) => (
   <Container dir="row">
-    <PaginationLink href={prev} label="Previous Page" text="Previous" />
+    <PaginationLink href={prev} label="Previous Page" text="Prev" />
     <StyledPages>
       {page} • {pages}
     </StyledPages>
