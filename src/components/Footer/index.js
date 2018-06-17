@@ -3,7 +3,7 @@ import React from 'react'
 import { Container, Icon, Link } from '../commons'
 import { StyledFooter } from './elements'
 
-const Footer = ({ buildTime, copyright, icons, links, siteUrl }) => (
+const Footer = ({ buildTime, copyright, icons, links }) => (
   <StyledFooter>
     <Container dir="row">
       {icons.map(icon => (
@@ -14,7 +14,7 @@ const Footer = ({ buildTime, copyright, icons, links, siteUrl }) => (
     </Container>
     <Container>
       <Link ext href={links.src.href} text={`Last build: ${buildTime}`} />
-      <Link ext href={siteUrl} text={copyright} />
+      <Link ext href="https://codybrunner.me" text={copyright} />
       <Link
         ext
         href={links.creativeCommons.href}

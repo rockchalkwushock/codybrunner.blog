@@ -21,7 +21,6 @@ const Layout = ({ children, data }) => {
           copyright={site.copyright}
           icons={site.icons}
           links={site.links}
-          siteUrl={site.siteUrl}
         />
       </div>
     </ThemeProvider>

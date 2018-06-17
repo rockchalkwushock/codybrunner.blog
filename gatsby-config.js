@@ -85,7 +85,7 @@ module.exports = {
         name: 'codybrunner.blog',
         short_name: 'Cody Brunner',
         description: 'Personal & technology blog by Cody Brunner.',
-        start_url: '/',
+        start_url: '/posts/1',
         lang: 'en-US',
         orientation: 'any',
         background_color: '#333333',
