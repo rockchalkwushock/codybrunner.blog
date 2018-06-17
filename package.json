@@ -6,7 +6,7 @@
   "description": "My personal & tech blog built with GatsbyJS.",
   "repository": "https://github.com/rockchalkwushock/codybrunner.blog.git",
   "scripts": {
-    "build": "gatsby build --prefix-paths",
+    "build": "gatsby build",
     "cm": "git cz",
     "develop": "gatsby develop",
     "serve": "gatsby serve"
