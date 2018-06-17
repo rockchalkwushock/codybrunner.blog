@@ -5,7 +5,7 @@ const styledVersion = dependencies['styled-components'].substr(1, 3)
 const year = new Date().getFullYear()
 
 module.exports = {
-  // pathPrefix: '/',
+  pathPrefix: '/',
   siteMetadata: {
     author: 'Cody Brunner',
     copyright: `© 2017-${year} Cody Brunner`,
@@ -66,7 +66,54 @@ module.exports = {
     twitter: '@RockChalkDev'
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://codybrunner.blog'
+      }
+    },
+    'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: `${process.env.GOOGLE_ANALYTICS_ID}`,
+        anonymize: true
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'codybrunner.blog',
+        short_name: 'Cody Brunner',
+        description: 'Personal & technology blog by Cody Brunner.',
+        start_url: '/',
+        lang: 'en-US',
+        orientation: 'any',
+        background_color: '#333333',
+        theme_color: '#ffe1b6',
+        display: 'standalone',
+        icon: 'src/assets/Icon.png'
+      }
+    },
+    'gatsby-plugin-no-sourcemaps',
+    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: '#ffe1b6',
+        showSpinner: false
+      }
+    },
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://codybrunner.blog',
+        sitemap: 'https://codybrunner.blog/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-twitter',
     {

@@ -1,0 +1,83 @@
+version: 2
+jobs:
+  checkout_code:
+    docker:
+      - image: 'circleci/node:latest'
+    working_directory: ~/codybrunner.blog
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/codybrunner.blog
+      - restore_cache:
+          keys:
+            - 'yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}'
+            - 'yarn-cache-{{ .Branch }}'
+            - yarn-cache-
+      - run: yarn install
+      - save_cache:
+          key: 'yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}'
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  build:
+    docker:
+      - image: 'circleci/node:latest'
+    working_directory: ~/codybrunner.blog
+    steps:
+      - attach_workspace:
+          at: ~/codybrunner.blog
+      - run:
+          name: yarn build
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID} yarn build
+            elif [ "${CIRCLE_BRANCH}" == "development" ]; then
+              GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID} yarn build
+            else
+              echo "This failed miserably!"
+            fi
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  deployment:
+    docker:
+      - image: 'circleci/node:latest'
+    working_directory: ~/codybrunner.blog
+    steps:
+      - attach_workspace:
+          at: ~/codybrunner.blog
+      - run: sudo yarn global add now
+      - deploy:
+          name: Deploy & Alias.
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              url=$(now public -t ${NOW_TOKEN} -n=my-blog --static 2>/dev/null)
+              echo "Site deployed to ${url}."
+              now -t ${NOW_TOKEN} alias $url codybrunner.blog
+              echo "${url} aliased to https://codybrunner.blog"
+            elif [ "${CIRCLE_BRANCH}" == "development" ]; then
+              url=$(now public -t ${NOW_TOKEN} -n=my-blog --static 2>/dev/null)
+              echo "Site deployed to ${url}."
+              now -t ${NOW_TOKEN} alias $url codybrunner-blog-beta
+              echo "${url} aliased to https://codybrunner-blog-beta.now.sh"
+            else
+              echo "This failed miserably!"
+            fi
+workflows:
+  version: 2
+  test_build_deploy:
+    jobs:
+      - checkout_code
+      - build
+      - deployment:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - development
+                - master

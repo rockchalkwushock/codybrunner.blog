@@ -7,7 +7,7 @@ export const theme = {
     width: '600px'
   },
   hover: '#ffffff',
-  primary: '#6f6f6f',
+  primary: '#FFE1B6',
   radius: '5px',
   reset: 'unset',
   secondary: '#333333',

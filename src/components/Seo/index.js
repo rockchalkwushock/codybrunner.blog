@@ -44,7 +44,7 @@ const Seo = ({ post, postSeo, site }) => {
         content={postSeo ? post.frontmatter.date : ''}
       />
       <meta itemProp="keywords" content={keywords} />
-      {/* <meta itemProp="image" content={require('../../assets/logo.jpg')} /> */}
+      <meta itemProp="image" content={require('../../assets/Icon.jpg')} />
       {/* OpenGraph Tags */}
       <meta
         property="og:title"
@@ -54,7 +54,7 @@ const Seo = ({ post, postSeo, site }) => {
         property="og:description"
         content={postSeo ? post.frontmatter.description : site.description}
       />
-      {/* <meta property="og:image" content={require('../../assets/logo.jpg')} /> */}
+      <meta property="og:image" content={require('../../assets/Icon.jpg')} />
       <meta property="og:image:alt" content="Logo for codybrunner.blog" />
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:height" content="300" />
@@ -77,7 +77,7 @@ const Seo = ({ post, postSeo, site }) => {
         name="twitter:description"
         content={postSeo ? post.frontmatter.description : site.description}
       />
-      {/* <meta name="twitter:image" content={require('../../assets/logo.jpg')} /> */}
+      <meta name="twitter:image" content={require('../../assets/Icon.jpg')} />
       <meta name="twitter:image:alt" content="Logo for codybrunner.blog" />
       <meta
         name="twitter:url"
