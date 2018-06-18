@@ -1,5 +1,5 @@
 {
   "static": {
-    "redirects": [{ "source": "/", "destination": "/posts/1" }]
+    "redirects": [{ "source": "/posts/1", "destination": "/" }]
   }
 }
