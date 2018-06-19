@@ -5,7 +5,6 @@ const styledVersion = dependencies['styled-components'].substr(1, 3)
 const year = new Date().getFullYear()
 
 module.exports = {
-  pathPrefix: '/posts',
   siteMetadata: {
     author: 'Cody Brunner',
     copyright: `© 2017-${year} Cody Brunner`,
