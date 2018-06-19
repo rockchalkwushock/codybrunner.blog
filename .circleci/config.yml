@@ -34,8 +34,10 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID} yarn build
+              cp now.json public
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
               GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID} yarn build
+              cp now.json public
             else
               echo "This failed miserably!"
             fi
