@@ -9,6 +9,7 @@
     "build": "gatsby build",
     "cm": "git cz",
     "develop": "gatsby develop",
+    "new": "plop --plopfile ./generators/plopfile.js",
     "serve": "gatsby serve"
   },
   "dependencies": {
@@ -54,6 +55,7 @@
     "eslint-config-prettier": "^2.9.0",
     "husky": "^1.0.0-rc.8",
     "lint-staged": "^7.2.0",
+    "plop": "^2.0.0",
     "prettier": "^1.13.5"
   },
   "config": {

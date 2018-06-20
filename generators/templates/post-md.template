@@ -1,0 +1,14 @@
+---
+date: "{{date}}"
+description: "{{description}}"
+draft: {{draft}}
+keywords: "{{keywords}}"
+tags: ["{{tags}}"]
+title: "{{title}}"
+---
+
+<!-- End of Post -->
+
+> **Happy Coding!**
+
+**~ Cody** :rocket:
