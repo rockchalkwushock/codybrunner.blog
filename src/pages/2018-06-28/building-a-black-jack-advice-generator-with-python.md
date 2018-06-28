@@ -1,7 +1,7 @@
 ---
 date: "2018-06-28"
 description: "How to build a simple black jack advice generator using Python."
-draft: true
+draft: false
 keywords: "python, black jack"
 tags: ["python"]
 title: "Building a Black Jack Advice Generator with Python"
