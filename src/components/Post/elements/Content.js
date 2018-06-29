@@ -24,10 +24,10 @@ const Content = styled.section`
   h4,
   h5,
   h6 {
-    margin: 0.5em 0;
+    margin: 1rem 0 0.5rem 0;
   }
   p {
-    margin: 1em 0;
+    margin: 1rem 0;
   }
   a {
     background-image: ${({ theme }) => theme.reset};
