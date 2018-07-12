@@ -2,7 +2,7 @@
 date: "2018-07-11"
 description: "A look back on two years of learning web development."
 draft: true
-keywords: "web-development, Portland, PDX Code Guild, personal reflection, BøthOfUs"
+keywords: "web-development, Portland, PDX Code Guild, personal reflection, BøthOfUs, High Fives Foundation"
 tags: ["personal-life", "web-development"]
 title: "Two Years of Web Development"
 ---
@@ -30,6 +30,8 @@ I started a meager little YouTube channel:
 I landed my first dev role as a freelancer with [BøthOfUs](http://www.bothofus.se/):
 
 <blockquote class="twitter-tweet" data-align="center" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">We all start somewhere. I&#39;ll be starting as a freelancer for BothOfUs, signed my contract this morning. 🙏🏻🎉🙌🏻<a href="https://twitter.com/hashtag/grateful?src=hash&amp;ref_src=twsrc%5Etfw">#grateful</a> <a href="https://twitter.com/hashtag/webdev?src=hash&amp;ref_src=twsrc%5Etfw">#webdev</a> <a href="https://twitter.com/hashtag/webdevelopment?src=hash&amp;ref_src=twsrc%5Etfw">#webdevelopment</a> <a href="https://twitter.com/hashtag/webdeveloper?src=hash&amp;ref_src=twsrc%5Etfw">#webdeveloper</a> <a href="https://twitter.com/hashtag/VueJS?src=hash&amp;ref_src=twsrc%5Etfw">#VueJS</a> <a href="https://twitter.com/hashtag/GraphQL?src=hash&amp;ref_src=twsrc%5Etfw">#GraphQL</a> <a href="https://twitter.com/hashtag/javascript?src=hash&amp;ref_src=twsrc%5Etfw">#javascript</a></p>&mdash; Cody Brunner (@RockChalkDev) <a href="https://twitter.com/RockChalkDev/status/976420499499692033?ref_src=twsrc%5Etfw">March 21, 2018</a></blockquote>
+
+And just a few weeks ago I participated in my first hackathon working on a rebuild of the [High Fives Foundation](https://highfivesfoundation.org/) website using React, GraphQL, and Styled-Components.
 
 I am in the middle of completing a bootcamp program through [PDX Code Guild](https://pdxcodeguild.com/) and have been enjoying learning Python (which is so much better than JavaScript, but really what language isn’t better?). I’ll begin work shortly on my capstone project which will be built using Django and the Fitbit API. I’m hoping having a bootcamp behind me will help out in the job search. I did get the pleasure of sitting down with two recruiters last week for coffee and have good feelings about what they can do to help me out.
 
