@@ -22,6 +22,11 @@ module.exports = {
         label: 'Instagram'
       },
       {
+        className: 'fab, linkedin',
+        href: 'https://www.linkedin.com/in/cody-brunner',
+        label: 'LinkedIn'
+      },
+      {
         className: 'fab, medium-m',
         href: 'https://medium.com/@RockChalkDev',
         label: 'Medium'

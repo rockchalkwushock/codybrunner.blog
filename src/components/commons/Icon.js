@@ -8,10 +8,6 @@ import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin'
 import faMediumM from '@fortawesome/fontawesome-free-brands/faMediumM'
 import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter'
 import faYoutube from '@fortawesome/fontawesome-free-brands/faYoutube'
-import faArrowCircleLeft from '@fortawesome/fontawesome-free-solid/faArrowCircleLeft'
-import faArrowCircleRight from '@fortawesome/fontawesome-free-solid/faArrowCircleRight'
-import faEnvelope from '@fortawesome/fontawesome-free-solid/faEnvelope'
-import faRss from '@fortawesome/fontawesome-free-solid/faRss'
 
 // By setting things up like this react-fontawesome knows of the icons
 // I am also only using these icons from the libraries so less overhead.
@@ -21,11 +17,7 @@ fontawesome.library.add(
   faLinkedin,
   faMediumM,
   faTwitter,
-  faYoutube,
-  faArrowCircleLeft,
-  faArrowCircleRight,
-  faEnvelope,
-  faRss
+  faYoutube
 )
 
 const UnstyledIcon = props => <FontAwesomeIcon {...props} />
